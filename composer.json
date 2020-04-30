@@ -1,9 +1,9 @@
 {
-  "name": "walter-a-jablonowski/micro-wiki",
-  "description": "Super simple wiki component",
+  "name": "walter-a-jablonowski/file-helper",
+  "description": "Just file helper",
   "type": "library",
-  "keywords": ["wiki", "wiki-engine", "simple", "easy", "small", "small-projects", "tiny", "smart", "innovation", "innovative"],
-  "homepage": "https://github.com/walter-a-jablonowski/micro-wiki",
+  "keywords": ["file", "helper"],
+  "homepage": "https://github.com/walter-a-jablonowski/file-helper",
   "license": "MIT",
   "authors": [
     {
@@ -18,25 +18,12 @@
   "minimum-stability": "dev",
 
   "require": {
-    "php": ">=7.1.9",
-    "components/jquery": "3.3.1",
-    "erusev/parsedown": "1.7.3",
-    "erusev/parsedown-extra": "0.7.1",
-    "walter-a-jablonowski/ui-basic-lib": "dev-master"
+    "php": ">=7.1.9"
   },
 
   "autoload": {
-    "psr-4": {
-      "WAJ\\Lib\\Spec\\MicroWiki\\": "src/",
-      "WAJ\\Lib\\Spec\\MicroWiki\\Viewer\\WikiMDView\\": "src/Viewer/WikiMDView/"
-    },
     "files": [
-
+      "src/files.php"
     ]
-  },
-
-  "waj-dev": {
-    "twbs/bootstrap": "4.3.1",
-    "components/font-awesome": "5.9.0"
   }
 }
