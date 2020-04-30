@@ -1,6 +1,6 @@
 # File helper
 
-Just file helper, playing with github raw
+Just file helper, playing with github user content
 
 
 ### LICENSE
