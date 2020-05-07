@@ -1,6 +1,6 @@
-# File helper
+# PHP helper
 
-Just file helper, playing with github user content
+Just PHP helper, playing with github user content
 
 
 ### LICENSE

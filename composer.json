@@ -1,9 +1,9 @@
 {
-  "name": "walter-a-jablonowski/file-helper",
-  "description": "Just file helper",
+  "name": "walter-a-jablonowski/php-helper",
+  "description": "Just PHP helper",
   "type": "library",
   "keywords": ["file", "helper"],
-  "homepage": "https://github.com/walter-a-jablonowski/file-helper",
+  "homepage": "https://github.com/walter-a-jablonowski/php-helper",
   "license": "MIT",
   "authors": [
     {
