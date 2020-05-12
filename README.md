@@ -1,6 +1,6 @@
 # PHP helper
 
-Just PHP helper, playing with github user content
+Some PHP for use in my github projects
 
 
 ### LICENSE
