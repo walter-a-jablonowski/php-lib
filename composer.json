@@ -23,7 +23,8 @@
 
   "autoload": {
     "files": [
-      "src/files.php"
+      "src/basic/types/arrays.php",
+      "src/files/files.php"
     ]
   }
 }
