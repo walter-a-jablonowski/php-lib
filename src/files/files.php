@@ -50,8 +50,11 @@
 
   for sort use a sort func
 
+  ARGS:
+    callback: function(full) called whenever a file is found
+
 */
-function scan_all_fils( $dir, $types = [], $first_level = true) /*@*/
+function scan_all_fils( $dir, $types = [], $callback = null, $first_level = true) /*@*/
 { 
   if( ! is_array($types) )  $types = [$types];
 
@@ -68,13 +71,18 @@ function scan_all_fils( $dir, $types = [], $first_level = true) /*@*/
     elseif( is_file("$dir/$f"))
     {
       $r[] = "$dir/$f";
+
+      if( $callback )
+        $callback("$dir/$f");
+
       continue;
     }
     
-    $r = array_merge( $r, scan_all_fils( "$dir/$f", $types, $first_level ));
+    $r = array_merge( $r, scan_all_fils( "$dir/$f", $types, $callback, $first_level ));
   } 
 
   // Filter types
+  // TASK: use a string comp from right here: be able look for .link.html
 
   if( $types && $first_level )
   {
@@ -97,8 +105,11 @@ function scan_all_fils( $dir, $types = [], $first_level = true) /*@*/
 
   for sort use a sort func
 
+  ARGS:
+    callback: function(full) called whenever a file is found
+
 */
-function scan_all_sub_flds( $dir, $first_level = true) /*@*/
+function scan_all_sub_flds( $dir, $callback = null, $first_level = true) /*@*/
 { 
   $dir  = str_replace( '\\', '/', trim($dir));
   $dir  = rtrim( $dir, '/' );  // unify just for this func
@@ -111,10 +122,16 @@ function scan_all_sub_flds( $dir, $first_level = true) /*@*/
       continue;
     
     elseif( is_file("$dir/$d"))
-      continue;
+    {
+      $r[] = "$dir/$d";
 
-    $r[] = "$dir/$d";
-    $r = array_merge( $r, scan_all_sub_flds( "$dir/$d", $first_level ));
+      if( $callback )
+        $callback("$dir/$f");
+
+      continue;
+    }
+
+    $r = array_merge( $r, scan_all_sub_flds( "$dir/$d", $callback, $first_level ));
   } 
 
   return $r;
